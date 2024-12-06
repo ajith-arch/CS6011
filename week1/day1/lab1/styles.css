@@ -1,0 +1,56 @@
+.red-button {    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.bu1-button {    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.bu2-button {    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.bu3-button {    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.name-p {
+    color: blue;
+    font-size: 20px;
+}
+
+
+ul {
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
+h1 {
+    color: blue;
+}
+
+a{
+        color :orange;
+        font-size :16px;
+        margin-left:10px;
+}
+
+body {
+  background-color: lightblue;
+}

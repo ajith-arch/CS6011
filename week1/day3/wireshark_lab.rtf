@@ -1,0 +1,39 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww12080\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Ping\
+\
+What data is being sent to the other computer?\
+* \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 We are sending ICMP packets, commonly known as ping packets, which include specific data conforming to the ICMP protocol.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+* The source address is my machine's IP address\
+* The destination address is the my partners IP address when I am sending a request and the reverse when I am recieving a response\
+\
+* How do the integer values compare with the ASCII that is displayed in the terminal? - The integer values correspond directly. When looking up the hex values on the ASCII table, the lookup value matches which is displayed.\
+\
+* Does it match anything we have seen before? \
+* How long does it take a ping packet to travel to your classmate's machine and back? - the time ranges from the tens to hundreds of miliseconds.\
+* Pinging google - The ping requests and reponses are taking tens of miliseconds.\
+* Pinging louvre - \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Pinging 
+\fs26 \strokec2 louvre.fr
+\fs24 \strokec2  takes slightly longer than Google, typically in the high tens of milliseconds. However, it is sometimes shorter than pinging my partner's machine.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+HTTP\
+* Open in browser - I observed the handshake along with the connection being established and maintained. But, I did not expect the RST response when the server decided to break the connection with my machine\
+* curl\
+	- curl is a tool for transferring data from or to a server using URLs\
+	- We are seeing a different, more simplified response. It seems the handshake still occurs, but then we observe the direct HTTP GET and 200 response from the server. There is no  TCP keep-alive and TCP window update info lines as I recieved when using the web browser.\
+\
+* http://github.com\
+	- \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The URL automatically redirects to 
+\fs26 \strokec2 https://github.com
+\fs24 \strokec2 , which removes specific profile information.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+	- \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Wireshark cannot fully interpret the traffic because HTTPS encrypts the connection, preventing third-party tools from inspecting requests and responses.\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+	- You can see the first messages which are establishing the connection before the connection is then secured and we're unable to read them. It seems this is the switch from HTTP -> HTTPS. }

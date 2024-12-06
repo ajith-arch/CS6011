@@ -1,0 +1,94 @@
+/* Center alignment for room title */
+#room {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Chat log box       //styling */
+#chat-log {
+    width: 75%; /* Adjusted width  */
+    height: 500px;
+    border: 2px solid #4CAF50; 
+    border-radius: 10px; 
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9; 
+    font-family: Arial, sans-serif;
+}
+
+/* Center alignment for chat     form */
+#chat-form {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Styling for message containers */
+.message-container {
+    border: 1px solid #ddd;
+    text-align: left;
+    border-radius: 15px;
+    background-color: #e3f2fd; /* Light blue background */
+    margin: 5px 0;
+    padding: 10px;
+    color: #000;
+    font-size: 14px;
+}
+
+/* Hove */
+
+/* Hover effect for buttons */
+button {
+    cursor: pointer;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+/* dwsd */
+
+/* Input field styling */
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 75%;
+    margin: 5px 0;
+}
+
+/* Leave button styling */
+#leave {
+    background-color: #f44336; /* Red for leave button */
+}
+
+#leave:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Home page - styling */
+#home-page {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#home-page label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    color: #444;
+}
+
+/* ajith-alphonse */

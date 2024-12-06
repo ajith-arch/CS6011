@@ -1,0 +1,10 @@
+{
+    "name": "sort-algorithm",
+    "version": "1.0.0",
+    "description": "Selection sort implementation with tests",
+    "main": "app.js",
+    "scripts": {
+        "test": "node appTest.js"
+    },
+    "private": true
+}
