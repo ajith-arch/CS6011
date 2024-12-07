@@ -3,27 +3,27 @@ package com.example.synthesizeapplication;
 import java.util.Random;
 
 public class WhiteNoise implements AudioComponent {
-    private Random random = new Random();
+    private final Random randomGenerator = new Random();
 
     @Override
-    public AudioClip getClip() {
-        AudioClip clip = new AudioClip();
-        int maxValue = Short.MAX_VALUE;
+    public AudioClip produceClip() {
+        AudioClip noiseClip = new AudioClip();
 
-        for (int i = 0; i < clip.bArray.length; i++) {
-            int sampleValue = random.nextInt(2 * maxValue + 1) - maxValue;
-            clip.setSample(i, sampleValue);
+        for (int i = 0; i < noiseClip.dataBuffer.length / 2; i++) {
+            int noiseValue = randomGenerator.nextInt(2 * Short.MAX_VALUE + 1) - Short.MAX_VALUE;
+            noiseClip.assignSample(i, noiseValue);
         }
-        return clip;
+
+        return noiseClip;
     }
 
     @Override
-    public boolean hasInput() {
+    public boolean hasInputConnection() {
         return false;
     }
 
     @Override
-    public void connectInput(AudioComponent input) {
-        assert false : "WhiteNoise does not accept inputs.";
+    public void attachInput(AudioComponent component) {
+        throw new UnsupportedOperationException("WhiteNoise does not accept inputs.");
     }
 }

@@ -1,35 +1,39 @@
 package com.example.synthesizeapplication;
 
 public class TriangleWave implements AudioComponent {
-    private int frequency;
+    private final int waveFrequency;
 
     public TriangleWave(int frequency) {
-        this.frequency = frequency;
+        this.waveFrequency = frequency;
     }
 
     @Override
-    public AudioClip getClip() {
-        AudioClip clip = new AudioClip();
-        int maxValue = Short.MAX_VALUE;
+    public AudioClip produceClip() {
+        AudioClip triangleClip = new AudioClip();
+        int amplitude = Short.MAX_VALUE;
 
-        for (int i = 0; i < clip.bArray.length; i++) {
-            double period = clip.rate / (double) frequency;
-            double value = (2 * maxValue / period) * (i % period) - maxValue;
+        for (int i = 0; i < triangleClip.dataBuffer.length / 2; i++) {
+            double period = AudioClip.sampleRate / (double) waveFrequency;
+            double position = i % period;
+            double value = (2 * amplitude / period) * position - amplitude;
+
             if ((i / period) % 2 == 0) {
                 value = -value;
             }
-            clip.setSample(i, (int) value);
+
+            triangleClip.assignSample(i, (int) value);
         }
-        return clip;
+
+        return triangleClip;
     }
 
     @Override
-    public boolean hasInput() {
+    public boolean hasInputConnection() {
         return false;
     }
 
     @Override
-    public void connectInput(AudioComponent input) {
-        assert false : "TriangleWave does not accept inputs.";
+    public void attachInput(AudioComponent component) {
+        throw new UnsupportedOperationException("TriangleWave does not accept inputs.");
     }
 }

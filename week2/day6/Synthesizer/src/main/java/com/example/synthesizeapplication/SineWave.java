@@ -1,37 +1,32 @@
 package com.example.synthesizeapplication;
 
-import com.example.synthesizeapplication.AudioComponent;
-import com.example.synthesizeapplication.AudioClip ;
-
 public class SineWave implements AudioComponent {
-    // Variable to store the frequency of the sine wave
-    private int _frequency;
+    private final int waveFrequency;
 
-    // Constructor to initialize the SineWave with a given frequency
-    SineWave(int frequency) {
-        this._frequency = frequency;
+    public SineWave(int frequency) {
+        this.waveFrequency = frequency;
     }
 
     @Override
-    public AudioClip getClip() {
-        // Create a new AudioClip to store the generated sine wave audio data
-        AudioClip clip = new AudioClip();
-        // Iterate through each sample of the audio clip
-        for (int index = 0; index < clip.bArray.length / 2; index++) {
-            // Calculate and set each sample value using the sine function
-            clip.setSample(index, (short) (Short.MAX_VALUE * Math.sin(2 * Math.PI * _frequency * index / clip.rate)));
+    public AudioClip produceClip() {
+        AudioClip sineClip = new AudioClip();
+
+        for (int i = 0; i < sineClip.dataBuffer.length / 2; i++) {
+            double angle = 2 * Math.PI * waveFrequency * i / AudioClip.sampleRate;
+            short sampleValue = (short) (Short.MAX_VALUE * Math.sin(angle));
+            sineClip.assignSample(i, sampleValue);
         }
-        return clip;
+
+        return sineClip;
     }
 
     @Override
-    public boolean hasInput() {
-        // SineWave does not accept any input components
+    public boolean hasInputConnection() {
         return false;
     }
 
     @Override
-    public void connectInput(AudioComponent component) {
-        // No implementation needed as SineWave does not accept input components
+    public void attachInput(AudioComponent component) {
+        throw new UnsupportedOperationException("SineWave does not accept inputs.");
     }
 }

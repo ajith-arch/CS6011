@@ -1,36 +1,34 @@
 package com.example.synthesizeapplication;
 
 public class LinearRamp implements AudioComponent {
-    // Variables to store the start and stop values of the ramp
-    private double _start;
-    private double _stop;
+    private final double initialValue;
+    private final double finalValue;
 
-    // Constructor to initialize the LinearRamp with start and stop values
-    LinearRamp(double start, double stop) {
-        this._start = start;
-        this._stop = stop;
+    public LinearRamp(double start, double stop) {
+        this.initialValue = start;
+        this.finalValue = stop;
     }
 
     @Override
-    public AudioClip getClip() {
-        // Create a new AudioClip to store the generated linear ramp audio data
-        AudioClip clip = new AudioClip();
-        // Iterate through each sample of the audio clip to generate the ramp
-        for (int i = 0; i < clip.bArray.length / 2; i++) {
-            // Set each sample value based on linear interpolation between start and stop
-            clip.setSample(i, (int) ((this._start * (clip.bArray.length / 2 - i) + this._stop * i) / (clip.bArray.length / 2)));
+    public AudioClip produceClip() {
+        AudioClip outputClip = new AudioClip();
+        int totalSamples = outputClip.dataBuffer.length / 2;
+
+        for (int i = 0; i < totalSamples; i++) {
+            double interpolatedValue = ((initialValue * (totalSamples - i)) + (finalValue * i)) / totalSamples;
+            outputClip.assignSample(i, (int) interpolatedValue);
         }
-        return clip;
+
+        return outputClip;
     }
 
     @Override
-    public boolean hasInput() {
-        // This component does not have any input
+    public boolean hasInputConnection() {
         return false;
     }
 
     @Override
-    public void connectInput(AudioComponent component) {
-        // No implementation needed as LinearRamp does not accept input components
+    public void attachInput(AudioComponent component) {
+        throw new UnsupportedOperationException("LinearRamp does not accept inputs.");
     }
 }

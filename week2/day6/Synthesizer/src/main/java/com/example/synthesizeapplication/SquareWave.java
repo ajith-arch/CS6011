@@ -1,38 +1,36 @@
 package com.example.synthesizeapplication;
 
-
-import com.example.synthesizeapplication.AudioComponent;
-import com.example.synthesizeapplication.AudioClip ;
-
 public class SquareWave implements AudioComponent {
-    private int frequency;
+    private final int waveFrequency;
 
     public SquareWave(int frequency) {
-        this.frequency = frequency;
+        this.waveFrequency = frequency;
     }
 
     @Override
-    public AudioClip getClip() {
-        AudioClip clip = new AudioClip();
-        int maxValue = Short.MAX_VALUE;
+    public AudioClip produceClip() {
+        AudioClip squareClip = new AudioClip();
+        int amplitude = Short.MAX_VALUE;
 
-        for (int i = 0; i < clip.bArray.length; i++) {
-            if ((frequency * i / (double) clip.rate) % 1 > 0.5) {
-                clip.setSample(i, maxValue);
+        for (int i = 0; i < squareClip.dataBuffer.length / 2; i++) {
+            double period = AudioClip.sampleRate / (double) waveFrequency;
+            if ((i % period) < (period / 2)) {
+                squareClip.assignSample(i, amplitude);
             } else {
-                clip.setSample(i, -maxValue);
+                squareClip.assignSample(i, -amplitude);
             }
         }
-        return clip;
+
+        return squareClip;
     }
 
     @Override
-    public boolean hasInput() {
+    public boolean hasInputConnection() {
         return false;
     }
 
     @Override
-    public void connectInput(AudioComponent input) {
-        assert false : "SquareWave does not accept inputs.";
+    public void attachInput(AudioComponent component) {
+        throw new UnsupportedOperationException("SquareWave does not accept inputs.");
     }
 }

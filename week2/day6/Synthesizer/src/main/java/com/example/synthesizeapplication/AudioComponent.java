@@ -1,10 +1,14 @@
 package com.example.synthesizeapplication;
 
-import java.util.ArrayList;
-
 public interface AudioComponent {
-    AudioClip getClip();
+    AudioClip produceClip();
 
-    boolean hasInput();
-    void connectInput(AudioComponent component);
+    boolean hasInputConnection();
+
+    void attachInput(AudioComponent inputComponent);
 }
+
+
+
+
+

@@ -5,14 +5,13 @@ public class Cable {
     private final AudioComponent outputComponent;
 
     public Cable(AudioComponentWidgetBase inputWidget, AudioComponentWidgetBase outputWidget) {
-        this.inputComponent = inputWidget.getAudioComponent();
-        this.outputComponent = outputWidget.getAudioComponent();
+        this.inputComponent = inputWidget.produceAudioComponent();
+        this.outputComponent = outputWidget.produceAudioComponent();
 
         if (this.inputComponent == null || this.outputComponent == null) {
-            throw new NullPointerException("Input 和 Output 組件必須初始化.");
+            throw new NullPointerException("Input and output components must not be null.");
         }
 
-
-        this.outputComponent.connectInput(this.inputComponent);
+        this.outputComponent.attachInput(this.inputComponent);
     }
 }

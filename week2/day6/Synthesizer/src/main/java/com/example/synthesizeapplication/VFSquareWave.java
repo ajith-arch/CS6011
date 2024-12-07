@@ -1,36 +1,34 @@
 package com.example.synthesizeapplication;
 
 public class VFSquareWave implements AudioComponent {
-    // Variable to store the input AudioComponent
-    AudioComponent _input;
+    private AudioComponent inputComponent;
 
     @Override
-    public AudioClip getClip() {
-        // Variable to track the current phase of the sine wave
-        double phase = 0;
-        // Get the input audio clip from the connected AudioComponent
-        AudioClip clip = _input.getClip();
-        // Create a new AudioClip to store the generated output
-        AudioClip output = new AudioClip();
-        // Iterate through each sample of the input clip
-        for (int i = 0; i < clip.bArray.length / 2; i++) {
-            // Update the phase based on the input sample value and the sample rate
-            phase += 2 * Math.PI * clip.getSample(i) / AudioClip.rate;
-            // Calculate and set the current sample value using the sine function
-            output.setSample(i, (int) (Short.MAX_VALUE * Math.sin(phase)));
+    public AudioClip produceClip() {
+        if (inputComponent == null) {
+            throw new IllegalStateException("Input is not connected for VFSquareWave.");
         }
-        return output;
+
+        double currentPhase = 0;
+        AudioClip inputClip = inputComponent.produceClip();
+        AudioClip outputClip = new AudioClip();
+
+        for (int i = 0; i < inputClip.dataBuffer.length / 2; i++) {
+            currentPhase += 2 * Math.PI * inputClip.fetchSample(i) / AudioClip.sampleRate;
+            int squareValue = Math.sin(currentPhase) > 0 ? Short.MAX_VALUE : Short.MIN_VALUE;
+            outputClip.assignSample(i, squareValue);
+        }
+
+        return outputClip;
     }
 
     @Override
-    public boolean hasInput() {
-        // VFSineWave does not accept any input components directly
-        return false;
+    public boolean hasInputConnection() {
+        return inputComponent != null;
     }
 
     @Override
-    public void connectInput(AudioComponent component) {
-        // Set the given AudioComponent as the input to this VFSineWave
-        this._input = component;
+    public void attachInput(AudioComponent component) {
+        this.inputComponent = component;
     }
 }
