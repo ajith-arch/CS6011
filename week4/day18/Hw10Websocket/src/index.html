@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Client</title>
+</head>
+<body>
+<h1>WebSocket Test</h1>
+<script>
+    const socket = new WebSocket("ws://localhost:8080");
+
+    socket.onopen = () => {
+        console.log("WebSocket connection established.");
+        socket.send("Hello from JavaScript!");
+    };
+
+    socket.onmessage = (event) => {
+        console.log("Received from server:", event.data);
+    };
+
+    socket.onerror = (error) => {
+        console.error("WebSocket error:", error);
+    };
+
+    socket.onclose = () => {
+        console.log("WebSocket connection closed.");
+    };
+</script>
+</body>
+</html>
