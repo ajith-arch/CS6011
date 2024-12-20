@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95e634a0-5cd7-48d3-bfa2-747d7fc1ac4d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day11/HelloJS.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day11/HelloJS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day11/hello.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day12/Sorting/appTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../week3/day12/Sorting/appTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day14/SimpleCalcServer.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day14/resources/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../week3/day14/resources/script.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2qCRClkv8aP7XuLaa6BVdKJUov6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AudioTest.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.SynthesizeApplication.executor": "Run",
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/ajithalphonse/Desktop/Synthesizer_pt4/Synthesizer/src/test/java",
+    "last_opened_file_path": "/Users/ajithalphonse/MSD/CS6011/week2/day6/Synthesizer/Synthesizer",
+    "onboarding.tips.debug.path": "/Users/ajithalphonse/MSD/CS6011/week2/day6/Synthesizer/src/main/java/com/example/synthesizeapplication/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="SynthesizeApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.synthesizeapplication.synthesizer.SynthesizeApplication" />
+      <module name="Synthesizer" />
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../javafx-sdk-23.0-2.1/lib --add-modules javafx.controls,javafx.fxml " />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.synthesizeapplication.synthesizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95e634a0-5cd7-48d3-bfa2-747d7fc1ac4d" name="Changes" comment="" />
+      <created>1734164446394</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734164446394</updated>
+    </task>
+    <servers />
+  </component>
+</project>
